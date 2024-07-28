@@ -1,22 +1,20 @@
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using ERCoreCRUD.Data;
 using ERCoreCRUD.Models.db;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
 
 namespace ERCoreCRUD.Controllers
 {
-    public class ProductController : Controller
+    public class ProductsController : Controller
     {
         private readonly NorthwindContext _db;
 
-        public ProductController(NorthwindContext db)
+        public ProductsController(NorthwindContext db)
         {
             _db = db;
         }
