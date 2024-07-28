@@ -1,0 +1,24 @@
+﻿@model IEnumerable<ERCoreCRUD.Models.db.Product>
+
+@{
+    ViewData["Title"] = "Search Products";
+}
+
+<h2>
+    <a href="/">กลับหน้าหลัก</a>
+</h2>
+<table class="table">
+    <tr>
+        <th>รหัสสินค้า</th>
+        <th>ชื่อสินค้า</th>
+        <th>ราคาสินค้า</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ProductId</td>
+            <td>@item.ProductName</td>
+            <td>@item.UnitPrice</td>
+        </tr>
+    }
+</table>

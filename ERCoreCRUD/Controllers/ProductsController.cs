@@ -166,5 +166,17 @@ namespace ERCoreCRUD.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        public IActionResult SearchProducts(string q)
+        {
+            if (string.IsNullOrEmpty(q))
+            {
+                return View("SearchProducts", _db.Products.ToList());
+            }
+            else
+            {
+                return View("SearchProducts", _db.Products.Where(p => p.ProductName.Contains(q)).ToList());
+            }
+        }
+
     }
 }
