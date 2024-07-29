@@ -4,68 +4,26 @@
     ViewData["Title"] = "Details Product";
 }
 
-<h1>Details</h1>
-<div>
-    <h4>Product</h4>
-    <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.ProductName)
-        </dt>
-        <dd class="col-sm-10">
+<h1>รายละเอียดสินค้า</h1>
+<hr />
+<div class="card col-md-6 border-success">
+    <div class="card-header alert-success">
+        <h2>
+            @Html.DisplayFor(model => model.ProductId) :
             @Html.DisplayFor(model => model.ProductName)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.QuantityPerUnit)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.QuantityPerUnit)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.UnitPrice)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.UnitPrice)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.UnitsInStock)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.UnitsInStock)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.UnitsOnOrder)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.UnitsOnOrder)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.ReorderLevel)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.ReorderLevel)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Discontinued)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Discontinued)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Category)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Category.CategoryName)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Supplier)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Supplier.CompanyName)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.ProductId">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+        </h2>
+    </div>
+    <div class="card-body">
+        <div class="card-text">ราคา : @Html.DisplayFor(model => model.UnitPrice)</div>
+        <div class="card-text">จำนวน/หน่วย : @Html.DisplayFor(model => model.QuantityPerUnit)</div>
+        <div class="card-text">สต๊อก : @Html.DisplayFor(model => model.UnitsInStock)</div>
+        <div class="card-text">สั่งซื้อ : @Html.DisplayFor(model => model.UnitsOnOrder)</div>
+        <div class="card-text">จุดสั่งซื้อ : @Html.DisplayFor(model => model.ReorderLevel)</div>
+        <div class="card-text">ประเภทสินค้า : @Html.DisplayFor(model => model.Category.CategoryName)</div>
+        <div class="card-text">บริษัทจัดจำหน่าย : @Html.DisplayFor(model => model.Supplier.CompanyName)</div>
+    </div>
+    <div class="card-footer">
+        <a asp-action="Edit" asp-route-id="@Model.ProductId" class="btn btn-warning">แก้ไขข้อมูล</a>
+        <a asp-action="Index" class="btn btn-primary">แสดงสินค้าทั้งหมด</a>
+    </div>
 </div>
